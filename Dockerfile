@@ -1,8 +1,13 @@
-FROM debian:jessie
-MAINTAINER telyn <telyn@bytemark.co.uk>
+FROM debian:stretch
 
-ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update && apt-get -y install \
-	build-essential \
-	devscripts \
-	git-buildpackage
+RUN set -eux; \
+    export DEBIAN_FRONTEND=noninteractive; \
+    apt-get -qq update; \
+    apt-get -qq install --no-install-recommends \
+        build-essential \
+        devscripts \
+        git-buildpackage \
+    ; \
+    apt-get -qq autoremove; \
+    apt-get -qq clean; \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*;
