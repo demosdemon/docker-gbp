@@ -13,4 +13,4 @@ RUN set -eux; \
     apt-get -qq clean; \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*; \
     mkdir -p /root/.gnupg; \
-    chmod 0700 /root.gnupg;
+    chmod 0700 /root/.gnupg;
