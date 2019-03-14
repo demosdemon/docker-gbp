@@ -7,8 +7,10 @@ RUN set -eux; \
         build-essential \
         devscripts \
         git-buildpackage \
-        gnupg2 dirmngr \
+        gnupg2 dirmngr scdaemon \
     ; \
     apt-get -qq autoremove; \
     apt-get -qq clean; \
-    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*;
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*; \
+    mkdir -p /root/.gnupg; \
+    chmod 0700 /root.gnupg;
