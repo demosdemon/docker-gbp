@@ -7,6 +7,7 @@ RUN set -eux; \
         build-essential \
         devscripts \
         git-buildpackage \
+        gnupg2 dirmngr \
     ; \
     apt-get -qq autoremove; \
     apt-get -qq clean; \
