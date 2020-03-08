@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:buster-slim
 
 RUN set -eux; \
     export DEBIAN_FRONTEND=noninteractive; \
